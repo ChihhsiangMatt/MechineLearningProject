@@ -15,7 +15,8 @@ movement <- movement %>%
   select(-c("valid", "priceHex","profitHex")) %>% 
   mutate(sales = price * move / qty)
 movement$prom <- as.character(movement$prom)
-movement$prom[is.na(movement$prom)] <- 'N'
+movement$prom[is.na(movement$prom)] <- 'N' . #movement$prom[movement$prom == ''] <- 'N'
+
 
 store <- store %>% select(c("name", "city", "zip", "store", "age9", "age60", "ethnic", "educ", "nocar", "income"))
 
